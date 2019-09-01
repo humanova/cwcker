@@ -30,19 +30,20 @@ async def on_ready():
 async def check_website():
     global c_count
 
-    is_changed, change = checker.check_cw_website()
+    while not client.is_closed:
+        is_changed, change = checker.check_cw_website()
 
-    if is_changed and not c_count == 0:
-        for user in msg_list:
+        if is_changed and not c_count == 0:
+            for user in msg_list:
 
-            usr = await client.get_user_info(user)
-            await client.start_private_message(usr)
-            await client.send_message(usr, change)
+                usr = await client.get_user_info(user)
+                await client.start_private_message(usr)
+                await client.send_message(usr, change)
 
-    c_count+=1
-    print(f"check {c_count}")
-    # sleep for 10 mins
-    await asyncio.sleep(600)
+        c_count+=1
+        print(f"check {c_count}")
+        # sleep for 10 mins
+        await asyncio.sleep(600)
 
 @client.event
 async def on_message(message):
