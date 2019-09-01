@@ -9,7 +9,7 @@ def check_cw_website():
     prev_html = open("website.txt", "r").read()
 
     if not len(curr_html) == len(prev_html):
-        change_text = f"Change detected!\n\nOld/New line count : {len(prev_html)} - {len(curr_html)}\nNew html :\n```{curr_html}```"
+        change_text = f"Change detected!\n\nOld/New char count : {len(prev_html)} - {len(curr_html)}\nNew html :\n```{curr_html}```"
         open("website.txt", "w+").write(curr_html)
 
         return (True, change_text)
