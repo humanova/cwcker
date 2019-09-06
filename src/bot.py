@@ -33,6 +33,12 @@ async def on_ready():
     await check_website()
 
 
+async def send_long_msg(ch, msg):
+
+    for chunk in [msg[i:i+2000] for i in range(0, len(msg), 2000)]:
+        await client.send_message(ch, chunk)
+
+
 async def check_website():
     global c_count
 
@@ -44,7 +50,7 @@ async def check_website():
                 for user in msg_list:
                     usr = await client.get_user_info(user)
                     await client.start_private_message(usr)
-                    await client.send_message(usr, ck[1])
+                    await send_long_msg(usr, ck[1])
         c_count += 1
         print(f"check {c_count}")
         # sleep for 5 mins
@@ -59,7 +65,7 @@ async def on_message(message):
             await client.start_private_message(message.author)
             res = checker.check_cw_website(check_list)
             for ck in res:
-                await client.send_message(message.author, ck[1])
+                await send_long_msg(message.author, ck[1])
 
 token = os.environ['BOT_TOKEN']
 client.run(token)

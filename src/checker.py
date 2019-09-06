@@ -3,13 +3,14 @@
 import requests
 import codecs
 
+
 def check_cw_website(check_list):
 
     results = []
     i = 0
     for url in check_list:
         r = requests.get(url)
-        
+
         curr_html = r.text
         prev_html = codecs.open(f"save/{i}.txt", "r", "utf-8").read()
 
@@ -20,7 +21,7 @@ def check_cw_website(check_list):
             results.append((True, change_text))
 
         change_text = f"There are no changes on the website. (`{url}`)"
-        i+=1
+        i += 1
 
         results.append((False, change_text))
 
