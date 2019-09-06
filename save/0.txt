@@ -1,0 +1,18 @@
+ï»¿<!DOCTYPE html>
+<html>
+   <head>
+	<meta charset="utf-8">
+   	<title>Cube World</title>
+    <style>
+        body {
+            background-image: url("media/wollay.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center; 
+        }
+    </style>
+
+   </head>
+   <body>
+   </body>
+</html>

@@ -14,6 +14,12 @@ env_set._set()
 msg_list = ['213262071050141696',
             '608001852700622855']
 
+check_list = ['https://cubeworld.com',
+              'https://picroma.com',
+              'https://picroma.com/cubeworld',
+              'https://picroma.com/buycubeworld',
+              ]
+
 c_count = 0
 ################################
 
@@ -31,19 +37,19 @@ async def check_website():
     global c_count
 
     while not client.is_closed:
-        is_changed, change = checker.check_cw_website()
+        res = checker.check_cw_website(check_list)
 
-        if is_changed and not c_count == 0:
-            for user in msg_list:
-
-                usr = await client.get_user_info(user)
-                await client.start_private_message(usr)
-                await client.send_message(usr, change)
-
-        c_count+=1
+        for ck in res:
+            if ck[0] == True and not c_count == 0:
+                for user in msg_list:
+                    usr = await client.get_user_info(user)
+                    await client.start_private_message(usr)
+                    await client.send_message(usr, ck[1])
+        c_count += 1
         print(f"check {c_count}")
-        # sleep for 10 mins
-        await asyncio.sleep(600)
+        # sleep for 5 mins
+        await asyncio.sleep(300)
+
 
 @client.event
 async def on_message(message):
@@ -51,7 +57,9 @@ async def on_message(message):
     if message.author.id in msg_list:
         if message.content == "!check":
             await client.start_private_message(message.author)
-            await client.send_message(message.author, checker.check_cw_website()[1])
+            res = checker.check_cw_website(check_list)
+            for ck in res:
+                await client.send_message(message.author, ck[1])
 
 token = os.environ['BOT_TOKEN']
 client.run(token)

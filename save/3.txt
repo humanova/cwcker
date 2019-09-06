@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="https://d1bcl7tdsf48aa.cloudfront.net/images/favicon.ico">
+    <title>Shop</title>   
+
+
+    <link rel="stylesheet" type="text/css" href="/Content/style.css?version=1" />
+
+    <script language="javascript" type="text/javascript">
+        function addText(object, text) {
+            document.postform.content.value += text;
+        }
+    </script>    
+    
+    <script language="javascript" type="text/javascript">             
+        var loginFail = false;        
+    </script>
+
+
+    <script src="/bundles/modernizr?v=wBEWDufH_8Md-Pbioxomt90vm6tJN2Pyy9u9zHtWsPo1"></script>
+
+    <script src="/bundles/jquery?v=FVs3ACwOLIVInrAl5sdzR2jrCDmVOWFbZMY6g6Q0ulE1"></script>
+
+    <script src="/bundles/colorbox"></script>
+
+    <script src="/bundles/picroma?v=Xpd02w9LECbn2o9DaZn6ctPWP4y0o9PLfBGXywDJyHk1"></script>
+
+    
+</head>
+<body>
+    <div id="topBar">
+        <div id="topBarContent">
+            <a href="/"><span id="picromaButton"></span></a>
+            <div id="loginPanel">
+               
+                    <a href="/account/create"><span class="item2">CREATE ACCOUNT</span></a>
+                     <a href="/account/login/?from=/buycubeworld"><span class="item2">LOG IN</span></a>
+               
+            </div>                      
+            <div id="topBarMenu">
+                <a href="/"><span class="item">HOME</span></a>
+                <a href="/cubeworld"><span class="item">CUBE WORLD</span></a>
+                <a href="/plasma"><span class="item">PLASMA</span></a>
+                <a href="/media"><span class="item">MEDIA</span></a>
+                <a href="/buycubeworld"><span class="item">SHOP</span></a>
+                <a href="/about"><span class="item">ABOUT</span></a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        
+    </div>
+
+    <div id="mainBox">
+        
+
+
+<div id="smallHeader"></div>
+<div class="caption">Buy Cube World</div>
+
+<div class="page">
+    <h3>The shop is currently closed.</h3>
+    
+    <p>
+    We will re-open the shop as soon as possible after the next Cube World update. Thanks for your patience!
+    </p>
+
+    <p>You can follow <a href="https://twitter.com/wol_lay">@wol_lay</a> on Twitter for the latest news on the upcoming update.</p>
+    
+</div>
+
+    </div>
+
+    <div id="bottomBar"><div class="content">© Copyright 2016 Picroma e.K. | <a href="/privacy">Privacy Policy</a> | <a href="/imprint">Imprint</a></div></div>
+
+
+   
+    
+    
+    
+</body>
+</html>
